@@ -1,4 +1,4 @@
-from grid import grid, make_gridcells
+from grid_lib import grid, make_gridcells
 
 def main():
     gridcells_path = make_gridcells()
