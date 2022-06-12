@@ -7,4 +7,19 @@ toolkit contains two functions which can be used in either command line or a scr
 ## Instructions
 For an example of a scripted application of this toolkit see main.
 
-- need to add command line instructions
+### Command Line:
+
+Import functions:
+```python
+from grid_lib import make_gridcells, grid
+```
+
+Make gridcells:
+```python
+gridcells_path = make_gridcells()
+```
+
+Grid lightning:
+```python
+grid(fn=fn, year='2016', gridcells_fn=gridcells_path)
+```
