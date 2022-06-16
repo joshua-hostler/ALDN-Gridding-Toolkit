@@ -9,7 +9,7 @@ The toolkit contains two functions which can be used in either command line or i
 ## Instructions
 For an example of a scripted application of this toolkit see main.
 
-### Command Line:
+### Conda Interpreter:
 
 Import functions:
 ```python
