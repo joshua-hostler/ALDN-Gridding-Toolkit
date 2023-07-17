@@ -1,12 +1,9 @@
 import numpy as np
 import pandas as pd
 import xarray as xr
-import matplotlib.pyplot as plt
 import geopandas as gpd
 from datetime import datetime
-from pytz import timezone
 import sparse
-import math
 import shapely.geometry
 import os
 
@@ -30,6 +27,7 @@ def grid(fn, year, datetime_format_string='%m/%d/%Y %X', gridcells_fn='gridcells
 
     # Clean lightning DataFrame.
     df = df.drop(df[df['STROKETYPE']=='CLOUD_STROKE'].index)
+    df = df.drop(df[(df['AMPLITUDE'] > 0) & (df['AMPLITUDE'] < 10_000)].index)
     df.LONGITUDE = df.LONGITUDE % 360
 
     # Parse stroke time of lightning DataFrame and create a column of dates.
@@ -109,3 +107,13 @@ def make_gridcells(fn=r'gridcells.gpkg', width=0.25, xmin=171, ymin=46, xmax=261
         return path_out, cell
 
     return path_out
+
+def build(fn, datetime_format_string='%m/%d/%Y %X', gridcells_fn='gridcells.gpkg'):
+    df = pd.read_csv(fn)
+    df['UTCDATETIME'] = df['UTCDATETIME'].apply(lambda x: datetime.strptime(x, datetime_format_string))
+    yrs = df['UTCDATETIME'].dt.year.astype('string').unique()
+
+    print('Gridding Start')
+    for yr in yrs:
+        grid(fn, year=yr)
+        print('gridded: ', yr)

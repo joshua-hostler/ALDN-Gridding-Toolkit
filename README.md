@@ -25,6 +25,8 @@ Grid lightning for 2016:
 ```python
 grid(fn=r'Historical_Lightning_2012_2020_TOA_AlaskaAlbersNAD83.txt', year='2016', gridcells_fn=gridcells_path)
 ```
+
+# Methodology
 # License
 MIT License
 
