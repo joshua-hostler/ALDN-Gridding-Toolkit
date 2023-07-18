@@ -1,4 +1,6 @@
 # Alaska Lightning Detection Network Gridding Toolkit
+[![DOI](https://zenodo.org/badge/502487778.svg)](https://zenodo.org/badge/latestdoi/502487778)
+
 ## Overview
 The Alaska Fire Service operates the ALDN to support fire management. The [historical lightning data](https://fire.ak.blm.gov/predsvcs/maps.php) is provided as a
 csv where each row represents point data for each observed stroke. Currently this is the most comprehensive dataset of lightning publicly available for Alaska and there is
