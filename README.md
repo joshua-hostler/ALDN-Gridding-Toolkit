@@ -71,3 +71,6 @@ SOFTWARE.
 
 ## References
 Alaska Interagency Coordination Center. (n.d.). Predictive services - maps/imagery/geospatial. AICC - Predictive Services - maps/imagery/geospatial. https://fire.ak.blm.gov/predsvcs/maps.php 
+
+## Acknowledgments
+This material is supported by the National Science Foundation under award #OIA-1757348 and by the State of Alaska
